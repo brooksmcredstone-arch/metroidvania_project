@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://ca8noeor5iexy"]
 
-[ext_resource type="Script" uid="uid://b7neta44iqm08" path="res://00_global/scene_manager/scene_manager.gd" id="1_4wb0k"]
+[ext_resource type="Script" uid="uid://b7neta44iqm08" path="res://metroidvania_project/00_global/scene_manager/scene_manager.gd" id="1_4wb0k"]
 
 [sub_resource type="Gradient" id="Gradient_4wb0k"]
 offsets = PackedFloat32Array(0.333, 1)

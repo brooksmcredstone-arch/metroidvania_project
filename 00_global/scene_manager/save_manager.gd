@@ -45,7 +45,7 @@ func save_game() -> void:
 	print("game saved")
 	var player : Player = get_tree().get_first_node_in_group("Player")
 	save_data = {
-		"scene path" : SceneManager.current_scene_uid,
+		"scene_path" : SceneManager.current_scene_uid,
 		"x" : player.global_position.x,
 		"y" : player.global_position.y,
 		"hp" : player.hp,
