@@ -21,7 +21,7 @@ func create_new_game_save() -> void:
 	var new_game_scene: String = "uid://545uvo36q808"
 	discovered_areas.append(new_game_scene)
 	save_data = {
-		"scene path" : new_game_scene,
+		"scene_path" : new_game_scene,
 		"x" : 37,
 		"y" : 232,
 		"hp" : 20,
