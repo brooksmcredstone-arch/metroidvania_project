@@ -1,0 +1,198 @@
+[gd_scene load_steps=19 format=3 uid="uid://dd0te187ig2kn"]
+
+[ext_resource type="Script" uid="uid://blw2b3wk3v0tf" path="res://player/scripts/player.gd" id="1_4flbx"]
+[ext_resource type="Script" uid="uid://1am7fmxvee88" path="res://player/scripts/idle.gd" id="2_onrkg"]
+[ext_resource type="Script" uid="uid://b1kpwatipcbhh" path="res://player/scripts/crouch.gd" id="3_2hs0m"]
+[ext_resource type="Script" uid="uid://b8xbxamwnqcax" path="res://player/scripts/run.gd" id="3_i3pqv"]
+[ext_resource type="Script" uid="uid://rtm8wv1mfs3" path="res://player/scripts/jump.gd" id="4_sweqy"]
+[ext_resource type="Script" uid="uid://bmgxcgsw66uhu" path="res://player/scripts/fall.gd" id="5_2hs0m"]
+[ext_resource type="Texture2D" uid="uid://bkjh3dve1js5e" path="res://player/sprites/hero.png" id="7_1jxqw"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1jxqw"]
+radius = 8.0
+height = 46.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dw050"]
+radius = 8.0
+
+[sub_resource type="Animation" id="Animation_dw050"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_nvl01"]
+resource_name = "crouch"
+length = 0.2
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [20, 21, 22, 23]
+}
+
+[sub_resource type="Animation" id="Animation_1jxqw"]
+resource_name = "idle"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_n7ghd"]
+resource_name = "jump"
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [24, 25, 26, 27, 28]
+}
+
+[sub_resource type="Animation" id="Animation_b26j0"]
+resource_name = "run"
+length = 0.8
+loop_mode = 1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.099999994, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.7001),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [14, 15, 16, 17, 18, 19, 12, 14, 13]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ivps1"]
+_data = {
+&"RESET": SubResource("Animation_dw050"),
+&"crouch": SubResource("Animation_nvl01"),
+&"idle": SubResource("Animation_1jxqw"),
+&"jump": SubResource("Animation_n7ghd"),
+&"run": SubResource("Animation_b26j0")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1jxqw"]
+size = Vector2(16, 3)
+
+[sub_resource type="Gradient" id="Gradient_1jxqw"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_dw050"]
+gradient = SubResource("Gradient_1jxqw")
+width = 256
+height = 256
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.5)
+
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
+z_index = 1
+collision_layer = 16
+collision_mask = 3
+floor_snap_length = 3.0
+script = ExtResource("1_4flbx")
+
+[node name="States" type="Node" parent="."]
+
+[node name="Idle" type="Node" parent="States"]
+unique_name_in_owner = true
+script = ExtResource("2_onrkg")
+
+[node name="Crouch" type="Node" parent="States"]
+unique_name_in_owner = true
+script = ExtResource("3_2hs0m")
+
+[node name="Run" type="Node" parent="States"]
+unique_name_in_owner = true
+script = ExtResource("3_i3pqv")
+
+[node name="Jump" type="Node" parent="States"]
+unique_name_in_owner = true
+script = ExtResource("4_sweqy")
+
+[node name="Fall" type="Node" parent="States"]
+unique_name_in_owner = true
+script = ExtResource("5_2hs0m")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1, -40)
+texture = ExtResource("7_1jxqw")
+hframes = 16
+vframes = 4
+
+[node name="CollisionStand" type="CollisionShape2D" parent="."]
+position = Vector2(0, -23)
+shape = SubResource("CapsuleShape2D_1jxqw")
+debug_color = Color(0, 0.6, 0.69803923, 0.1764706)
+
+[node name="CollisionCrouch" type="CollisionShape2D" parent="."]
+position = Vector2(1, -15.5)
+shape = SubResource("CapsuleShape2D_dw050")
+debug_color = Color(0, 0.6, 0.69803923, 0.1764706)
+
+[node name="Label" type="Label" parent="."]
+visible = false
+offset_left = -31.0
+offset_top = -80.0
+offset_right = 36.0
+offset_bottom = -60.0
+theme_override_font_sizes/font_size = 12
+text = "Label"
+horizontal_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_ivps1")
+}
+autoplay = "idle"
+
+[node name="OneWayPlatformShapeCast" type="ShapeCast2D" parent="."]
+position = Vector2(0, -3)
+enabled = false
+shape = SubResource("RectangleShape2D_1jxqw")
+target_position = Vector2(0, 6)
+max_results = 12
+collision_mask = 2
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(3, -42)
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(1, -26)
+color = Color(0.9480515, 0.8570155, 0.5696271, 1)
+energy = 0.3
+texture = SubResource("GradientTexture2D_dw050")
