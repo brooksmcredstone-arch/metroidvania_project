@@ -1,11 +1,11 @@
 [gd_scene load_steps=16 format=4 uid="uid://545uvo36q808"]
 
-[ext_resource type="Script" uid="uid://du7pyi2xxpwq2" path="res://general/scripts/level_bounds.gd" id="1_hs4yc"]
-[ext_resource type="TileSet" uid="uid://besr40orp6oby" path="res://level/tilesets/forgotten_forest.tres" id="2_vqbfy"]
-[ext_resource type="PackedScene" uid="uid://mmkc37ag7ktt" path="res://level/props/plant.tscn" id="3_nls23"]
-[ext_resource type="Texture2D" uid="uid://c7e0kaeg46u2u" path="res://level/tilesets/sprites/light_stream.jpg" id="4_bjmm4"]
-[ext_resource type="PackedScene" uid="uid://ehwrfgvarjv2" path="res://general/level_transition/level_transition.tscn" id="5_2cwdl"]
-[ext_resource type="PackedScene" uid="uid://c0f6mxwx8kue2" path="res://general/player_spawn/player_spawn.tscn" id="6_hs4yc"]
+[ext_resource type="Script" uid="uid://du7pyi2xxpwq2" path="res://metroidvania_project/general/scripts/level_bounds.gd" id="1_hs4yc"]
+[ext_resource type="TileSet" uid="uid://besr40orp6oby" path="res://metroidvania_project/level/tilesets/forgotten_forest.tres" id="2_vqbfy"]
+[ext_resource type="PackedScene" uid="uid://mmkc37ag7ktt" path="res://metroidvania_project/level/props/plant.tscn" id="3_nls23"]
+[ext_resource type="Texture2D" uid="uid://c7e0kaeg46u2u" path="res://metroidvania_project/level/tilesets/sprites/light_stream.jpg" id="4_bjmm4"]
+[ext_resource type="PackedScene" uid="uid://ehwrfgvarjv2" path="res://metroidvania_project/general/level_transition/level_transition.tscn" id="5_2cwdl"]
+[ext_resource type="PackedScene" uid="uid://c0f6mxwx8kue2" path="res://metroidvania_project/general/player_spawn/player_spawn.tscn" id="6_hs4yc"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_f67iu"]
 blend_mode = 1

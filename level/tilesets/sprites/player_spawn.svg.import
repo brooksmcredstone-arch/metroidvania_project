@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://6k8bstyttucj"
-path="res://.godot/imported/player_spawn.svg-e7aa12513d1fe1fb849c13a6c2f2ab50.ctex"
+path="res://.godot/imported/player_spawn.svg-56f8e66886661e8b979ce144c3dba3ff.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://level/tilesets/sprites/player_spawn.svg"
-dest_files=["res://.godot/imported/player_spawn.svg-e7aa12513d1fe1fb849c13a6c2f2ab50.ctex"]
+source_file="res://metroidvania_project/level/tilesets/sprites/player_spawn.svg"
+dest_files=["res://.godot/imported/player_spawn.svg-56f8e66886661e8b979ce144c3dba3ff.ctex"]
 
 [params]
 

@@ -1,5 +1,5 @@
 @tool
-@icon("res://general/icons/level_bounds.svg")
+@icon("res://metroidvania_project/general/icons/level_bounds.svg")
 class_name LevelBounds extends Node2D
 
 @export_range(480, 2048, 32, "suffix:px") var width : int = 480 : set = _on_width_changed

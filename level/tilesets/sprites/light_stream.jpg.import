@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c7e0kaeg46u2u"
-path="res://.godot/imported/light_stream.jpg-e23adea4402941376fe35b5c4ec1d87b.ctex"
+path="res://.godot/imported/light_stream.jpg-6c8af077ad64431dec7d22086c49cbe6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://level/tilesets/sprites/light_stream.jpg"
-dest_files=["res://.godot/imported/light_stream.jpg-e23adea4402941376fe35b5c4ec1d87b.ctex"]
+source_file="res://metroidvania_project/level/tilesets/sprites/light_stream.jpg"
+dest_files=["res://.godot/imported/light_stream.jpg-6c8af077ad64431dec7d22086c49cbe6.ctex"]
 
 [params]
 

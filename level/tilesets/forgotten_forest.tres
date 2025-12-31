@@ -1,6 +1,6 @@
 [gd_resource type="TileSet" load_steps=3 format=3 uid="uid://besr40orp6oby"]
 
-[ext_resource type="Texture2D" uid="uid://c0no5y3mqxvan" path="res://level/tilesets/sprites/forgotten_forest_example_tileset.png" id="1_5of7x"]
+[ext_resource type="Texture2D" uid="uid://c0no5y3mqxvan" path="res://metroidvania_project/level/tilesets/sprites/forgotten_forest_example_tileset.png" id="1_5of7x"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lbeo5"]
 texture = ExtResource("1_5of7x")

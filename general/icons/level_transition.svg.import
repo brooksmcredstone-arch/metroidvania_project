@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c50hwso1sjnhr"
-path="res://.godot/imported/level_transition.svg-b546bfd71d2ad72287c58dd393c8aae9.ctex"
+path="res://.godot/imported/level_transition.svg-3293c34d6f96b9be8e71f58915c9205e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://general/icons/level_transition.svg"
-dest_files=["res://.godot/imported/level_transition.svg-b546bfd71d2ad72287c58dd393c8aae9.ctex"]
+source_file="res://metroidvania_project/general/icons/level_transition.svg"
+dest_files=["res://.godot/imported/level_transition.svg-3293c34d6f96b9be8e71f58915c9205e.ctex"]
 
 [params]
 

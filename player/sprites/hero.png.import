@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bkjh3dve1js5e"
-path="res://.godot/imported/hero.png-90a362881ab5da47bb204d6eae108e57.ctex"
+path="res://.godot/imported/hero.png-071c6643053959551ff5d4359a770c7f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://player/sprites/hero.png"
-dest_files=["res://.godot/imported/hero.png-90a362881ab5da47bb204d6eae108e57.ctex"]
+source_file="res://metroidvania_project/player/sprites/hero.png"
+dest_files=["res://.godot/imported/hero.png-071c6643053959551ff5d4359a770c7f.ctex"]
 
 [params]
 
