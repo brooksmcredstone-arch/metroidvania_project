@@ -1,6 +1,10 @@
 #Save_Manager Script
 extends Node
 
+const SLOTS : Array[String] = [
+	"save_01", "save_02", "save_03"
+]
+
 var current_slot : int = 0
 var save_data : Dictionary
 var discovered_areas : Array = []
@@ -15,6 +19,12 @@ func _unhandled_input(event: InputEvent)-> void:
 			save_game()
 		elif event.keycode == KEY_O:
 			load_game()
+		elif event.keycode == KEY_1:
+			current_slot = 0
+		elif event.keycode == KEY_2:
+			current_slot = 1
+		elif event.keycode == KEY_3:
+			current_slot = 2
 	pass
 
 func create_new_game_save() -> void:
@@ -36,7 +46,7 @@ func create_new_game_save() -> void:
 		"persistent_data" : persistent_data,
 	}
 	## Save Data
-	var save_file = FileAccess.open("user://save.sav", FileAccess.WRITE)
+	var save_file = FileAccess.open(get_file_name(), FileAccess.WRITE)
 	save_file.store_line(JSON.stringify(save_data))
 	pass
 
@@ -62,7 +72,7 @@ func save_game() -> void:
 		"persistent_data" : persistent_data,
 	}
 	## Save Data
-	var save_file = FileAccess.open("user://save.sav", FileAccess.WRITE)
+	var save_file = FileAccess.open(get_file_name(), FileAccess.WRITE)
 	save_file.store_line(JSON.stringify(save_data))
 	pass
 
@@ -70,16 +80,17 @@ func save_game() -> void:
 func load_game() -> void:
 	print("game loaded")
 	
-	if not FileAccess.file_exists("user://save.sav"):
+	if not FileAccess.file_exists(get_file_name()):
 		return
 	
-	var save_file = FileAccess.open("user://save.sav", FileAccess.READ)
+	var save_file = FileAccess.open(get_file_name(), FileAccess.READ)
 	save_data = JSON.parse_string(save_file.get_line() )
 	
 	persistent_data = save_data.get("persistent_data", {} )
 	discovered_areas = save_data.get("discovered_areas", []  )
 	var scene_path : String = save_data.get("scene_path", "uid://545uvo36q808")
 	SceneManager.transition_to_scene(scene_path, "", Vector2.ZERO, "up")
+	await SceneManager.new_scene_ready
 	setup_player()
 	pass
 
@@ -95,9 +106,17 @@ func setup_player() -> void:
 	player.mp = save_data.get("mp", 20)
 	player.lvl = save_data.get("lvl", 1)
 	player.experience = save_data.get("experience", 0)
+	
 	player.dash = save_data.get("dash", false)
 	player.double_jump = save_data.get("double_jump", false)
+	player.ground_pound = save_data.get("ground_pound", false)
 	player.floatation = save_data.get("floatation", false)
 	
-	player.global_position = Vector2(save_data.get("x", 0), save_data.get("y", 0) )
+	player.global_position = Vector2(
+		save_data.get("x", 0), 
+		save_data.get("y", 0)
+		)
 	pass
+
+func get_file_name() -> String:
+	return "user://" + SLOTS[current_slot] + ".sav"

@@ -1,12 +1,12 @@
 [gd_scene load_steps=19 format=3 uid="uid://dd0te187ig2kn"]
 
-[ext_resource type="Script" uid="uid://blw2b3wk3v0tf" path="res://player/scripts/player.gd" id="1_4flbx"]
-[ext_resource type="Script" uid="uid://1am7fmxvee88" path="res://player/scripts/idle.gd" id="2_onrkg"]
-[ext_resource type="Script" uid="uid://b1kpwatipcbhh" path="res://player/scripts/crouch.gd" id="3_2hs0m"]
-[ext_resource type="Script" uid="uid://b8xbxamwnqcax" path="res://player/scripts/run.gd" id="3_i3pqv"]
-[ext_resource type="Script" uid="uid://rtm8wv1mfs3" path="res://player/scripts/jump.gd" id="4_sweqy"]
-[ext_resource type="Script" uid="uid://bmgxcgsw66uhu" path="res://player/scripts/fall.gd" id="5_2hs0m"]
-[ext_resource type="Texture2D" uid="uid://bkjh3dve1js5e" path="res://player/sprites/hero.png" id="7_1jxqw"]
+[ext_resource type="Script" uid="uid://blw2b3wk3v0tf" path="res://metroidvania_project/player/scripts/player.gd" id="1_4flbx"]
+[ext_resource type="Script" uid="uid://1am7fmxvee88" path="res://metroidvania_project/player/scripts/idle.gd" id="2_onrkg"]
+[ext_resource type="Script" uid="uid://b1kpwatipcbhh" path="res://metroidvania_project/player/scripts/crouch.gd" id="3_2hs0m"]
+[ext_resource type="Script" uid="uid://b8xbxamwnqcax" path="res://metroidvania_project/player/scripts/run.gd" id="3_i3pqv"]
+[ext_resource type="Script" uid="uid://rtm8wv1mfs3" path="res://metroidvania_project/player/scripts/jump.gd" id="4_sweqy"]
+[ext_resource type="Script" uid="uid://bmgxcgsw66uhu" path="res://metroidvania_project/player/scripts/fall.gd" id="5_2hs0m"]
+[ext_resource type="Texture2D" uid="uid://bkjh3dve1js5e" path="res://metroidvania_project/player/sprites/hero.png" id="7_1jxqw"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1jxqw"]
 radius = 8.0
@@ -189,6 +189,7 @@ max_results = 12
 collision_mask = 2
 
 [node name="Camera2D" type="Camera2D" parent="."]
+process_mode = 3
 position = Vector2(3, -42)
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
