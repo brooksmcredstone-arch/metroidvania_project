@@ -15,8 +15,8 @@ func _ready() -> void:
 	
 	print("Player not found!")
 	# Instantiate a new instance of our player scene
-	var player : Player = load("uid://545uvo36q808").instantiate()
+	var player : Player = load("uid://dd0te187ig2kn").instantiate()
 	get_tree().root.add_child(player)
 	#Position the player into the world
-	player.global_position = self.global_position
+	player.global_position = global_position
 	pass 

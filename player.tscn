@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dd0te187ig2kn"]
+[gd_scene load_steps=21 format=3 uid="uid://dd0te187ig2kn"]
 
 [ext_resource type="Script" uid="uid://blw2b3wk3v0tf" path="res://metroidvania_project/player/scripts/player.gd" id="1_4flbx"]
 [ext_resource type="Script" uid="uid://1am7fmxvee88" path="res://metroidvania_project/player/scripts/idle.gd" id="2_onrkg"]
@@ -7,6 +7,8 @@
 [ext_resource type="Script" uid="uid://rtm8wv1mfs3" path="res://metroidvania_project/player/scripts/jump.gd" id="4_sweqy"]
 [ext_resource type="Script" uid="uid://bmgxcgsw66uhu" path="res://metroidvania_project/player/scripts/fall.gd" id="5_2hs0m"]
 [ext_resource type="Texture2D" uid="uid://bkjh3dve1js5e" path="res://metroidvania_project/player/sprites/hero.png" id="7_1jxqw"]
+[ext_resource type="Script" uid="uid://cvgprysdk5p8r" path="res://metroidvania_project/player/scripts/input_hints.gd" id="8_7lhjv"]
+[ext_resource type="Texture2D" uid="uid://c8wmefvrkpyv5" path="res://metroidvania_project/player/sprites/input_icons.png" id="9_gbpjv"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1jxqw"]
 radius = 8.0
@@ -149,6 +151,7 @@ unique_name_in_owner = true
 script = ExtResource("5_2hs0m")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 1
 position = Vector2(1, -40)
 texture = ExtResource("7_1jxqw")
 hframes = 16
@@ -197,3 +200,13 @@ position = Vector2(1, -26)
 color = Color(0.9480515, 0.8570155, 0.5696271, 1)
 energy = 0.3
 texture = SubResource("GradientTexture2D_dw050")
+
+[node name="InputHints" type="Node2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(0, -70)
+script = ExtResource("8_7lhjv")
+
+[node name="Sprite2D" type="Sprite2D" parent="InputHints"]
+z_index = 1
+texture = ExtResource("9_gbpjv")
+hframes = 16

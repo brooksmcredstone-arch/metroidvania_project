@@ -4,14 +4,14 @@
 [ext_resource type="TileSet" uid="uid://besr40orp6oby" path="res://metroidvania_project/level/tilesets/forgotten_forest.tres" id="2_eaq55"]
 [ext_resource type="PackedScene" uid="uid://ehwrfgvarjv2" path="res://metroidvania_project/general/level_transition/level_transition.tscn" id="3_lt0nm"]
 [ext_resource type="PackedScene" uid="uid://cca7evndvi1q7" path="res://metroidvania_project/level/props/torch.tscn" id="4_ilx7m"]
-[ext_resource type="Texture2D" uid="uid://drfc3g7qucygb" path="res://metroidvania_project/general/save_point/save_point.png" id="5_eaq55"]
+[ext_resource type="PackedScene" uid="uid://crkkfw33cywot" path="res://metroidvania_project/general/save_point/save_point.tscn" id="5_lt0nm"]
 [ext_resource type="PackedScene" uid="uid://c0f6mxwx8kue2" path="res://metroidvania_project/general/player_spawn/player_spawn.tscn" id="6_lt0nm"]
 
 [node name="0106" type="Node2D"]
 
 [node name="LevelBounds" type="Node2D" parent="."]
 z_index = 256
-position = Vector2(-52, -87)
+position = Vector2(-51, -64)
 script = ExtResource("1_ev8n0")
 width = 576
 height = 334
@@ -47,10 +47,10 @@ position = Vector2(-13, 8)
 tile_set = ExtResource("2_eaq55")
 
 [node name="LevelTransition" parent="." instance=ExtResource("3_lt0nm")]
-position = Vector2(-40, 228)
+position = Vector2(-65, 227)
 size = 3
 target_level = "uid://f6bs5wcjyflp"
-target_area_name = "LevelTransition04"
+target_area_name = "LevelTransition4"
 
 [node name="props" type="Node" parent="."]
 
@@ -65,12 +65,9 @@ color = Color(0.30980393, 0.39607844, 0.39215687, 0.68235296)
 energy = 1.5
 blend_mode = 2
 
-[node name="SavePoint" type="Node2D" parent="."]
-position = Vector2(235, 225)
-
-[node name="Sprite2D" type="Sprite2D" parent="SavePoint"]
-position = Vector2(0, -25)
-texture = ExtResource("5_eaq55")
-
 [node name="PlayerSpawn" parent="." instance=ExtResource("6_lt0nm")]
-position = Vector2(2, 174)
+z_index = 2
+position = Vector2(4, 228)
+
+[node name="SavePoint" parent="." instance=ExtResource("5_lt0nm")]
+position = Vector2(225, 226)
